@@ -114,7 +114,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { getData } from '../../../services/apiClient'
+import { getData } from '../../services/apiClient'
 
 const loading = ref(false)
 const search = ref('')
@@ -141,7 +141,7 @@ const toggleEstado = (user) => {
 onMounted(async () => {
   loading.value = true
   try {
-    const res = await getData('/api/usuarios')
+    const res = await getData('/usuarios')
     usuarios.value = Array.isArray(res) ? res : (res.usuarios || [])
     totalUsuarios.value = usuarios.value.length
     // Simular nuevos hoy

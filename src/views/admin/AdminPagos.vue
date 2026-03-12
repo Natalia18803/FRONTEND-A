@@ -100,7 +100,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { getData } from '../../../services/apiClient'
+import { getData } from '../../services/apiClient'
 
 const loading = ref(false)
 const search = ref('')
@@ -134,7 +134,7 @@ const getEstadoColor = (estado) => {
 onMounted(async () => {
   loading.value = true
   try {
-    const res = await getData('/api/pagos')
+    const res = await getData('/pagos')
     pagos.value = Array.isArray(res) ? res : (res.pagos || [])
     totalPagos.value = pagos.value.length
   } catch (e) {

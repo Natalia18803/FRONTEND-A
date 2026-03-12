@@ -142,7 +142,7 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
-import { getData } from '../../../services/apiClient'
+import { getData } from '../../services/apiClient'
 
 const loading = ref(false)
 const search = ref('')
@@ -181,7 +181,7 @@ const verDetalles = (lec) => {
 onMounted(async () => {
   loading.value = true
   try {
-    const res = await getData('/api/lecturas')
+    const res = await getData('/lecturas')
     lecturas.value = Array.isArray(res) ? res : (res.lecturas || [])
   } catch (e) {
     console.error('Error cargando lecturas:', e)

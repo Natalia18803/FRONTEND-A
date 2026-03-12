@@ -269,7 +269,7 @@ const getLecturaIcon = (tipo) => {
 const guardarCambios = async () => {
   try {
     if (usuario.value?._id) {
-      await putData(`/api/usuarios/${usuario.value._id}`, editForm.value)
+      await putData(`/usuarios/${usuario.value._id}`, editForm.value)
     }
   } catch (e) {
     console.error('Error guardando cambios:', e)
@@ -281,7 +281,7 @@ onMounted(async () => {
     // Cargar lecturas
     loadingLecturas.value = true
     try {
-      const res = await getData(`/api/lecturas/usuario/${usuario.value._id}`)
+      const res = await getData(`/lecturas/usuario/${usuario.value._id}`)
       lecturas.value = Array.isArray(res) ? res : (res.lecturas || [])
     } catch (e) {
       console.error('Error cargando lecturas:', e)
@@ -292,7 +292,7 @@ onMounted(async () => {
     // Cargar pagos
     loadingPagos.value = true
     try {
-      const res = await getData(`/api/pagos/${usuario.value._id}`)
+      const res = await getData(`/pagos/${usuario.value._id}`)
       pagos.value = Array.isArray(res) ? res : (res.pagos || [])
     } catch (e) {
       console.error('Error cargando pagos:', e)
