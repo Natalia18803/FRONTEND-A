@@ -55,18 +55,7 @@
                   { label: 'Administrador', value: 'admin', icon: 'admin_panel_settings', slot: 'admin' }
                 ]"
               >
-                <template v-slot:user>
-                  <div class="row items-center no-wrap">
-                    <q-icon name="person" size="18px" class="q-mr-xs" />
-                    <div>Usuario</div>
-                  </div>
-                </template>
-                <template v-slot:admin>
-                  <div class="row items-center no-wrap">
-                    <q-icon name="admin_panel_settings" size="18px" class="q-mr-xs" />
-                    <div>Administrador</div>
-                  </div>
-                </template>
+                
               </q-btn-toggle>
             </div>
 
